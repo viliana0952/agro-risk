@@ -1,0 +1,81 @@
+@use "colors";
+
+.main-wrapper {
+  background: colors.$green-tea;
+  height: 100dvh;
+  max-height: 100dvh;
+  width: 100dvw;
+  padding: 40px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 26px;
+  
+  .section {
+    background-color: colors.$cream;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 50%;
+    padding: 26px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-wrapper {
+    background-color: colors.$lime !important;
+
+    h2 {
+      text-align: left;
+      width: 100%;
+      color: colors.$violet;
+      font-weight: 600;
+    }
+
+    .question-wrapper {
+      width: 100%;
+
+      h3 {
+        font-weight: 500;
+      }
+
+      .radio-group {
+        display: flex;
+        flex-direction: column;
+        margin: 15px 0;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  .submit-button-wrapper {
+    width: 50%;
+
+    .submit-button {
+        width: 100%;
+    }
+  }
+
+  .result-section {
+    h1 {
+      color: colors.$grey;
+      font-weight: 900;
+    }
+    h3 {
+      width: 100%;
+      color: colors.$violet;
+      font-weight: 800;
+      margin: 0;
+
+      span {
+        padding-left: 8px;
+      }
+    }
+  }
+
+}

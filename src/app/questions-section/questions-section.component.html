@@ -1,0 +1,45 @@
+<div class="main-wrapper">
+  @if(result) {
+  <div class="section result-section">
+    <h1>Изчислена крайна вероятност</h1>
+    @for(row of result; track $index) {
+    <h3>
+      {{ row[0] | questionTitle | uppercase }}&colon;<span
+        >{{ row[1] | number : "1.2-2" }}&percnt;</span
+      >
+    </h3>
+    }
+  </div>
+  } @else { @if(sections) { @for(section of sections; track $index) {
+  <div class="section section-wrapper">
+    <h2>{{ section.type | questionTitle | uppercase }}</h2>
+    @for(question of section.questions; track $index) {
+    <div class="question-wrapper">
+      <h3>{{ question.questionText }}</h3>
+      <mat-radio-group
+        class="radio-group"
+        color="primary"
+        (change)="onAnswerSelect($event, question)"
+      >
+        @for (answer of question.answers; let i = $index; track i) {
+        <mat-radio-button [value]="i">{{ answer }}</mat-radio-button>
+        }
+      </mat-radio-group>
+    </div>
+    }
+  </div>
+  }
+
+  <div class="submit-button-wrapper">
+    <button
+      mat-raised-button
+      color="primary"
+      class="submit-button"
+      (click)="onSubmit()"
+    >
+      Изчисли
+    </button>
+  </div>
+  }
+ }
+</div>

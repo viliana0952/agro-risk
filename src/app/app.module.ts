@@ -6,16 +6,22 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './modules/material.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { QuestionsSectionComponent } from './questions-section/questions-section.component';
+import { HttpClientModule } from '@angular/common/http';
+import { QuestionTitlePipe } from './components/question-title.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    QuestionsSectionComponent,
+    QuestionTitlePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
