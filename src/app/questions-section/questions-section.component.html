@@ -1,4 +1,4 @@
-<div class="main-wrapper">
+<div class="main-wrapper" #scrollContainer>
   @if(result) {
   <div class="section result-section">
     <h1>Изчислена крайна вероятност</h1>
@@ -28,6 +28,10 @@
     </div>
     }
   </div>
+  } 
+
+  @if(displayRequiredError) {
+    <div class="error-message">Моля, отговорете на всички въпроси!</div>
   }
 
   <div class="submit-button-wrapper">
@@ -35,11 +39,10 @@
       mat-raised-button
       color="primary"
       class="submit-button"
-      (click)="onSubmit()"
+      (click)="onSubmit(scrollContainer)"
     >
       Изчисли
     </button>
   </div>
-  }
- }
+  } }
 </div>

@@ -9,8 +9,9 @@ import { QuestionsService } from '../services/questions.service';
   styleUrl: './questions-section.component.scss',
 })
 export class QuestionsSectionComponent {
-  sections = [...sections];
+  sections = [...sections, ...sections];
   result: any;
+  displayRequiredError = false;
 
   constructor(private readonly questionsService: QuestionsService) {}
 
@@ -18,17 +19,22 @@ export class QuestionsSectionComponent {
     question.value = +event.value + 1;
   }
 
-  onSubmit() {
+  onSubmit(scrollContainer: any) {
     const questions = this.sections.flatMap((section) => {
       return section.questions.map((question) => {
+        if (!question.value) {
+          this.displayRequiredError = true;
+          scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         return {
           [question.questionTitle]: question.value,
         };
       });
     });
-
-    this.questionsService.getResult(questions).subscribe((res) => {
-      this.result = Object.entries(res);
-    });
+    if (!this.displayRequiredError) {
+      this.questionsService.getResult(questions).subscribe((res) => {
+        this.result = Object.entries(res);
+      });
+    }
   }
 }
