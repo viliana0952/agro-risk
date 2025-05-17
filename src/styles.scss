@@ -1,0 +1,27 @@
+@use 'colors';
+@use 'fonts';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font: fonts.$primary-font;
+    color: colors.$dark-grey;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    font: fonts.$secondary-font;
+}
