@@ -12,17 +12,17 @@ export class QuestionTitlePipe implements PipeTransform {
       case QuestionType.SILNI_VETROVE:
         return 'Силни ветрове';
       case QuestionType.PROLIVEN_DAJD_NAVODNENIE:
-        return '';
+        return 'Проливен дъжд и наводнение';
       case QuestionType.OGAN:
-        return '';
+        return 'Пожар';
       case QuestionType.OSLANQVANE:
-        return '';
+        return 'Осланяване';
       case QuestionType.KISHA:
-        return '';
+        return 'Киша';
       case QuestionType.IZMRAZVANE:
-        return '';
+        return 'Измръзване';
       case QuestionType.IZTEGLQNE:
-        return '';
+        return 'Изтегляне';
     }
   }
 }

@@ -9,7 +9,7 @@ import { QuestionsService } from '../services/questions.service';
   styleUrl: './questions-section.component.scss',
 })
 export class QuestionsSectionComponent {
-  sections = [...sections, ...sections];
+  sections = [...sections];
   result: any;
   displayRequiredError = false;
 
