@@ -6,4 +6,5 @@ export interface Question {
     answers: string[],
     value?: number,
     type?: QuestionType
+    link?:string;
 }

@@ -13,7 +13,8 @@ export const sections: QuestionSection[] = [
       },
       {
         questionTitle: 'gradushka_diapazoni',
-        questionText: 'Вие попадате ли в някой от тези диапазони?',
+        questionText: 'Вие попадате ли в някой от тези диапазони:',
+        link: 'https://www.weathermod-bg.eu/structure',
         answers: ['Да', 'Не'],
       },
     ],
