@@ -17,18 +17,31 @@
     <div class="question-wrapper">
       <h3>{{ question.questionText }}</h3>
 
-       @if (question.link) {
-    <p>
-      <a
-  class="question-link"
-  [href]="question.link"
-  target="_blank"
-  rel="noopener noreferrer"
->
-        {{ question.link }}
-      </a>
-    </p>
-  }
+        @if (question.link) {
+         <p>
+         <a
+            class="question-link"
+            [href]="question.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+             {{ question.link }}
+         </a>
+         </p>
+        }
+
+        @if (question.questionTitle === 'gradushka_gradobitnost') {
+          <a
+             href="assets/images/regions.jpg"
+             target="_blank"
+             rel="noopener noreferrer"
+          >
+          <img
+             src="assets/images/regions.jpg"
+             alt="Map of градобитност"
+             style="max-width: 70%; margin: 0rem 0; border-radius: 10px; box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);"
+          /></a>
+        }
 
       <mat-radio-group
         class="radio-group"
